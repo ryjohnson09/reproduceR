@@ -1,9 +1,9 @@
-# Preface {.unnumbered}
+# Welcome! {.unnumbered}
 
-This is a Quarto book.
+Here is some information about the book!
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+::: {.callout-note icon="false"}
+## Story Time
 
-```{r}
-1 + 1
-```
+This is a test
+:::

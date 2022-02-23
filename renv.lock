@@ -3,7 +3,7 @@
     "Version": "4.1.2",
     "Repositories": [
       {
-        "Name": null,
+        "Name": "https://packagemanager.rstudio.com/cran/latest",
         "URL": "https://packagemanager.rstudio.com/cran/latest"
       }
     ]
@@ -39,10 +39,10 @@
     },
     "glue": {
       "Package": "glue",
-      "Version": "1.4.2",
+      "Version": "1.6.1",
       "Source": "Repository",
       "Repository": "RSPM",
-      "Hash": "6efd734b14c6471cfe443345f3e35e29"
+      "Hash": "de07842fc27ebf60e1102091c0c85e47"
     },
     "highr": {
       "Package": "highr",

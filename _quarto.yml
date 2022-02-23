@@ -3,14 +3,25 @@ project:
   output-dir: docs
 
 book:
-  title: "reproduceR"
+  title: "Reproducible R"
   author: "Ryan Johnson"
+  page-footer: 
+    right: 
+      - icon: github
+        href: https://github.com/ryjohnson09/reproduceR
+      - icon: twitter
+        href: https://twitter.com/ryjohnson09
   repo-url: https://github.com/ryjohnson09/reproduceR
+  repo-actions: [edit]
+  sharing: [twitter, facebook]
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
+
+comments:
+  hypothesis: true
 
 bibliography: references.bib
 

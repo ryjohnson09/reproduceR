@@ -103,7 +103,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome!</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -129,7 +129,11 @@
         <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
+<li><a href="#welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+<ul class="collapse">
+<li><a href="#book-structure" class="nav-link" data-scroll-target="#book-structure">Book Structure</a></li>
+<li><a href="#license" class="nav-link" data-scroll-target="#license">License</a></li>
+</ul></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ryjohnson09/reproduceR/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -141,23 +145,49 @@
 </header>
 
 <section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome!</h1>
-<p>Here is some information about the book!</p>
+<h1 class="unnumbered">Welcome</h1>
+<p>If my R analysis yields the number 4, and I run the same analysis a week from now with the same outcome (4), is my analysis considered <strong>reproducible</strong>?</p>
+<p>The answer…<em>maybe?</em></p>
+<p>While the concept of reproducibility may differ from one data science team to the next, most reproducible analyses share certain criteria:</p>
+<ul>
+<li><p><strong>Stable</strong> - will my analysis yield the <em>same outcome</em> today, tomorrow, a year from now, 10 years from now, etc.?</p></li>
+<li><p><strong>Shareable</strong> - can I <em>share</em> my analysis with a colleague, a friend, a random person on the other side of the world?</p></li>
+<li><p><strong>Intuitive</strong> - can someone step into my analysis and know <em>how</em> to reproduce my work?</p></li>
+</ul>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Story Time
+Goal of this book
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a test</p>
+<p>To provide you with the skills and knowledge to create <strong>reproducible</strong> R analyses that are stable, shareable, and intuitive.</p>
 </div>
 </div>
+<p>We will discuss reproducibility from two angles:</p>
+<ol type="1">
+<li>Understanding your R environment</li>
+<li>Reproducible techniques</li>
+</ol>
+<section id="book-structure" class="level2">
+<h2 class="anchored" data-anchor-id="book-structure">Book Structure</h2>
+<p>It’s also the goal of this book to provide you with the <strong>minimal skill-set</strong> required to create reproducible analyses in R and will purposefully not be a deep dive into any one topic. Each chapter/topic in this book will provide you with a <em>foundational understanding</em> so that you can easily build you knowledge base and confidently explore any one topic in more detail. I will also include references when applicable for each topic to help guide deeper explorations.</p>
+<p>Each chapter/topic will include the following:</p>
+<ul>
+<li><p>A (often silly) story to help conceptualize the importance of each topic</p></li>
+<li><p>An overview of the topic geared towards R users that are new to reproducible analyses.</p></li>
+<li><p>Minimal code and/or working example to get you started.</p></li>
+</ul>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>[license info]</p>
 
 
+</section>
 </section>
 </main> <!-- /main -->
 <script type="application/javascript">

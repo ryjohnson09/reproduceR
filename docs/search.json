@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Reproducible R",
     "section": "",
-    "text": "Welcome!\nHere is some information about the book!\n\n\n\n\n\n\nStory Time\n\n\n\nThis is a test"
+    "text": "Welcome\nIf my R analysis yields the number 4, and I run the same analysis a week from now with the same outcome (4), is my analysis considered reproducible?\nThe answer…maybe?\nWhile the concept of reproducibility may differ from one data science team to the next, certain tenants?themes?:\n\nStable - will my analysis yield the same outcome today, tomorrow, a year from now, 10 years from now, etc.?\nShareable - can I share my analysis with a colleague, a friend, a random person on the other side of the world?\nIntuitive - can someone step into my analysis and know how to reproduce my work?"
   },
   {
     "objectID": "intro.html",
@@ -26,5 +26,40 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "index.html#who-is-this-book-for",
+    "href": "index.html#who-is-this-book-for",
+    "title": "Reproducible R",
+    "section": "Who is this book for?",
+    "text": "Who is this book for?"
+  },
+  {
+    "objectID": "index.html#how-do-we-get-there",
+    "href": "index.html#how-do-we-get-there",
+    "title": "Reproducible R",
+    "section": "How do we get there?",
+    "text": "How do we get there?"
+  },
+  {
+    "objectID": "index.html#how-do-we-achieve-our-goal",
+    "href": "index.html#how-do-we-achieve-our-goal",
+    "title": "Reproducible R",
+    "section": "How do we achieve our goal?",
+    "text": "How do we achieve our goal?"
+  },
+  {
+    "objectID": "index.html#book-structure",
+    "href": "index.html#book-structure",
+    "title": "Reproducible R",
+    "section": "Book Structure",
+    "text": "Book Structure\nIt’s also the goal of this book to provide you with the minimal skill-set required to create reproducible analyses in R and will purposefully not be a deep dive into any one topic. Each chapter/topic in this book will provide you with a foundational understanding so that you can easily build you knowledge base and confidently explore any one topic in more detail. I will also include references when applicable for each topic to help guide deeper explorations.\nEach chapter/topic will include the following:\n\nA (often silly) story to help conceptualize the importance of each topic\nAn overview of the topic geared towards R users that are new to reproducible analyses.\nMinimal code and/or working example to get you started."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Reproducible R",
+    "section": "License",
+    "text": "License\n[license info]"
   }
 ]

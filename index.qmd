@@ -1,9 +1,40 @@
-# Welcome! {.unnumbered}
+# Welcome {.unnumbered}
 
-Here is some information about the book!
+If my R analysis yields the number 4, and I run the same analysis a week from now with the same outcome (4), is my analysis considered **reproducible**?
+
+The answer...*maybe?*
+
+While the concept of reproducibility may differ from one data science team to the next, most reproducible analyses share certain criteria:
+
+-   **Stable** - will my analysis yield the *same outcome* today, tomorrow, a year from now, 10 years from now, etc.?
+
+-   **Shareable** - can I *share* my analysis with a colleague, a friend, a random person on the other side of the world?
+
+-   **Intuitive** - can someone step into my analysis and know *how* to reproduce my work?
 
 ::: {.callout-note icon="false"}
-## Story Time
+# Goal of this book
 
-This is a test
+To provide you with the skills and knowledge to create **reproducible** R analyses that are stable, shareable, and intuitive.
 :::
+
+We will discuss reproducibility from two angles:
+
+1.  Understanding your R environment
+2.  Reproducible techniques
+
+## Book Structure
+
+It's also the goal of this book to provide you with the **minimal skill-set** required to create reproducible analyses in R and will purposefully not be a deep dive into any one topic. Each chapter/topic in this book will provide you with a *foundational understanding* so that you can easily build you knowledge base and confidently explore any one topic in more detail. I will also include references when applicable for each topic to help guide deeper explorations.
+
+Each chapter/topic will include the following:
+
+-   A (often silly) story to help conceptualize the importance of each topic
+
+-   An overview of the topic geared towards R users that are new to reproducible analyses.
+
+-   Minimal code and/or working example to get you started.
+
+## License
+
+\[license info\]

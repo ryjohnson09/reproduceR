@@ -1,65 +1,44 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducible R",
-    "section": "",
-    "text": "Welcome\nIf my R analysis yields the number 4, and I run the same analysis a week from now with the same outcome (4), is my analysis considered reproducible?\nThe answer…maybe?\nWhile the concept of reproducibility may differ from one data science team to the next, certain tenants?themes?:\n\nStable - will my analysis yield the same outcome today, tomorrow, a year from now, 10 years from now, etc.?\nShareable - can I share my analysis with a colleague, a friend, a random person on the other side of the world?\nIntuitive - can someone step into my analysis and know how to reproduce my work?"
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "index.html#who-is-this-book-for",
-    "href": "index.html#who-is-this-book-for",
-    "title": "Reproducible R",
-    "section": "Who is this book for?",
-    "text": "Who is this book for?"
-  },
-  {
-    "objectID": "index.html#how-do-we-get-there",
-    "href": "index.html#how-do-we-get-there",
-    "title": "Reproducible R",
-    "section": "How do we get there?",
-    "text": "How do we get there?"
-  },
-  {
-    "objectID": "index.html#how-do-we-achieve-our-goal",
-    "href": "index.html#how-do-we-achieve-our-goal",
-    "title": "Reproducible R",
-    "section": "How do we achieve our goal?",
-    "text": "How do we achieve our goal?"
-  },
-  {
     "objectID": "index.html#book-structure",
     "href": "index.html#book-structure",
     "title": "Reproducible R",
     "section": "Book Structure",
-    "text": "Book Structure\nIt’s also the goal of this book to provide you with the minimal skill-set required to create reproducible analyses in R and will purposefully not be a deep dive into any one topic. Each chapter/topic in this book will provide you with a foundational understanding so that you can easily build you knowledge base and confidently explore any one topic in more detail. I will also include references when applicable for each topic to help guide deeper explorations.\nEach chapter/topic will include the following:\n\nA (often silly) story to help conceptualize the importance of each topic\nAn overview of the topic geared towards R users that are new to reproducible analyses.\nMinimal code and/or working example to get you started."
+    "text": "Book Structure\nIt’s also the goal of this book to provide you with the minimal skill-set required to create reproducible analyses in R and will purposefully not be a deep dive into any one topic. Each chapter/topic in this book will provide you with a foundational understanding so that you can easily build you knowledge base and confidently explore any one topic in more detail. I will also include references when applicable for each topic to help guide deeper explorations.\nEach chapter/topic will include the following:\n\nA (often silly) story to help conceptualize the importance of each topic.\nAn overview of the topic geared towards R users that are new to reproducible analyses.\nMinimal code and/or working example to get you started."
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
     "title": "Reproducible R",
     "section": "License",
-    "text": "License\n[license info]"
+    "text": "License\nThis book is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License.\nThe code samples in this book are licensed under Creative Commons CC0 1.0 Universal (CC0 1.0), i.e. public domain."
+  },
+  {
+    "objectID": "preface.html#software-information",
+    "href": "preface.html#software-information",
+    "title": "Preface",
+    "section": "Software Information",
+    "text": "Software Information\nThis book was written using Quarto within the RStudio IDE with the follow session information:\n\nutils::sessionInfo()\n\nR version 4.1.2 (2021-11-01)\nPlatform: x86_64-apple-darwin21.1.0 (64-bit)\nRunning under: macOS Monterey 12.2.1\n\nMatrix products: default\nBLAS:   /usr/local/Cellar/openblas/0.3.18/lib/libopenblasp-r0.3.18.dylib\nLAPACK: /usr/local/Cellar/r/4.1.2/lib/R/lib/libRlapack.dylib\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] compiler_4.1.2  magrittr_2.0.1  fastmap_1.1.0   htmltools_0.5.2\n [5] tools_4.1.2     stringi_1.7.4   rmarkdown_2.11  knitr_1.36     \n [9] stringr_1.4.0   xfun_0.25       digest_0.6.27   jsonlite_1.7.2 \n[13] rlang_0.4.11    renv_0.14.0     evaluate_0.14"
+  },
+  {
+    "objectID": "preface.html#about-the-author",
+    "href": "preface.html#about-the-author",
+    "title": "Preface",
+    "section": "About the Author",
+    "text": "About the Author\nRyan is…"
+  },
+  {
+    "objectID": "preface.html#acknowledgments",
+    "href": "preface.html#acknowledgments",
+    "title": "Preface",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nMy acknowledgements"
+  },
+  {
+    "objectID": "chapters/sec1/your-r-env.html",
+    "href": "chapters/sec1/your-r-env.html",
+    "title": "Your R Environment",
+    "section": "",
+    "text": "A story about R environment differences."
   }
 ]

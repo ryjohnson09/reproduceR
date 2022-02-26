@@ -21,7 +21,7 @@
   <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="site_libs/quarto-search/fuse.min.js"></script>
   <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./intro.html" rel="next">
+  <link href="./preface.html" rel="next">
   <script src="site_libs/quarto-html/quarto.js"></script>
   <script src="site_libs/quarto-html/popper.min.js"></script>
   <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,19 +108,24 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a href="./chapters/sec1/your-r-env.html" class="sidebar-item-text sidebar-link">Your R Environment</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-chapterssec1your-r-envqmd" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-chapterssec1your-r-envqmd" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./chapters/sec1/r-setup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting up R</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
-  </div>
-</li>
+    </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -146,13 +151,13 @@
 
 <section id="welcome" class="level1 unnumbered">
 <h1 class="unnumbered">Welcome</h1>
-<p>If my R analysis yields the number 4, and I run the same analysis a week from now with the same outcome (4), is my analysis considered <strong>reproducible</strong>?</p>
+<p>How many times have you finished an analysis in R, took a step back and said, “Wow, that’s so reproducible!”. Yea, me neither. Despite its immense importance, reproducibility does not generate much fanfare and is often overlooked. Furthermore, what constitutes a reproducible workflow is not always clear. For example, If my R analysis yields the number 4, and I run the same analysis tomorrow with the same outcome (4), is my analysis considered <strong>reproducible</strong>?</p>
 <p>The answer…<em>maybe?</em></p>
-<p>While the concept of reproducibility may differ from one data science team to the next, most reproducible analyses share certain criteria:</p>
+<p>Despite the uncertainty, most reproducible analyses share certain attributes, including:</p>
 <ul>
-<li><p><strong>Stable</strong> - will my analysis yield the <em>same outcome</em> today, tomorrow, a year from now, 10 years from now, etc.?</p></li>
-<li><p><strong>Shareable</strong> - can I <em>share</em> my analysis with a colleague, a friend, a random person on the other side of the world?</p></li>
-<li><p><strong>Intuitive</strong> - can someone step into my analysis and know <em>how</em> to reproduce my work?</p></li>
+<li><p><strong>Stable</strong> - knowing an analysis will generate the <em>same outcome</em> today, tomorrow, a year from now, 10 years from now, etc.</p></li>
+<li><p><strong>Shareable</strong> - I can <em>share</em> my analysis with a colleague, a friend, a random person on the other side of the world, or my future self.</p></li>
+<li><p><strong>Intuitive</strong> - anyone can step into my analysis and know <em>how</em> to reproduce my work.</p></li>
 </ul>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -167,24 +172,20 @@ Goal of this book
 <p>To provide you with the skills and knowledge to create <strong>reproducible</strong> R analyses that are stable, shareable, and intuitive.</p>
 </div>
 </div>
-<p>We will discuss reproducibility from two angles:</p>
-<ol type="1">
-<li>Understanding your R environment</li>
-<li>Reproducible techniques</li>
-</ol>
 <section id="book-structure" class="level2">
 <h2 class="anchored" data-anchor-id="book-structure">Book Structure</h2>
 <p>It’s also the goal of this book to provide you with the <strong>minimal skill-set</strong> required to create reproducible analyses in R and will purposefully not be a deep dive into any one topic. Each chapter/topic in this book will provide you with a <em>foundational understanding</em> so that you can easily build you knowledge base and confidently explore any one topic in more detail. I will also include references when applicable for each topic to help guide deeper explorations.</p>
 <p>Each chapter/topic will include the following:</p>
 <ul>
-<li><p>A (often silly) story to help conceptualize the importance of each topic</p></li>
+<li><p>A (often silly) story to help conceptualize the importance of each topic.</p></li>
 <li><p>An overview of the topic geared towards R users that are new to reproducible analyses.</p></li>
 <li><p>Minimal code and/or working example to get you started.</p></li>
 </ul>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
-<p>[license info]</p>
+<p>This book is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</a> License.</p>
+<p>The code samples in this book are licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 1.0 Universal (CC0 1.0)</a>, i.e.&nbsp;public domain.</p>
 
 
 </section>
@@ -270,8 +271,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./preface.html" class="pagination-link">
+        <span class="nav-page-text">Preface</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

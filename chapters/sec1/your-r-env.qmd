@@ -1,0 +1,5 @@
+## Your R Environment
+
+::: {.callout-note style="color: gray" appearance="minimal" icon="false"}
+A story about R environment differences.
+:::

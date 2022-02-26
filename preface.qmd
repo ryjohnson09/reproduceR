@@ -1,0 +1,17 @@
+# Preface {.unnumbered}
+
+## Software Information
+
+This book was written using [Quarto](https://quarto.org/) within the [RStudio IDE](http://www.rstudio.com/ide/) with the follow session information:
+
+```{r}
+utils::sessionInfo()
+```
+
+## About the Author
+
+Ryan is...
+
+## Acknowledgments
+
+My acknowledgements

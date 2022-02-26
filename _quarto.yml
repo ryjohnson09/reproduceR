@@ -16,9 +16,10 @@ book:
   sharing: [twitter, facebook]
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - preface.qmd
+    - part: chapters/sec1/your-r-env.qmd
+      chapters:
+      - chapters/sec1/r-setup.qmd
 
 comments:
   hypothesis: true

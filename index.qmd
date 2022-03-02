@@ -1,6 +1,6 @@
 # Welcome {.unnumbered}
 
-How many times have you finished an analysis in R, took a step back and said, "Wow, that's so reproducible!". Yea, me neither. Despite its immense importance, reproducibility does not generate much fanfare and is often overlooked. Furthermore, what constitutes a reproducible workflow is not always clear. For example, If my R analysis yields the number 4, and I run the same analysis tomorrow with the same outcome (4), is my analysis considered **reproducible**?
+How many times have you finished an analysis in R, took a step back and said, "Wow, that's so reproducible!" Yea, me neither. Despite its immense importance, reproducibility does not generate much fanfare and is often overlooked. Furthermore, what constitutes a reproducible workflow is not always clear. For example, If my R analysis yields the number 4, and I run the same analysis tomorrow with the same outcome (4), is my analysis considered **reproducible**?
 
 The answer...*maybe?*
 

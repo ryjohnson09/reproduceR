@@ -39,6 +39,41 @@
     "href": "chapters/sec1/your-r-env.html",
     "title": "Your R Environment",
     "section": "",
-    "text": "A story about R environment differences."
+    "text": "Note\n\n\n\nA story about how environment can change the outcome (ice cream idea?)\n\n\n\nIn order to reproduce a workflow, a user must understand the environment in which the workflow resides.\nRunning R locally or on a shared server (e.g. RStudio Workbench)\nStep through the R startup:\n.Renviron/.Rprofile/.RData / .Rhistory"
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html",
+    "href": "chapters/sec1/r-startup.html",
+    "title": "1  R Startup",
+    "section": "",
+    "text": "My first car in high school was a 2001 Toyota Corolla. I loved this car mostly for its simplicity; I would turn on the car, and start driving. Fast forward 20+ years, when I turn on my current car now, there are a series of actions completed before I start driving including:\n\nThe steering wheel adjusts to my pre-configured height.\nMy cell phone connects to to the car’s bluetooth.\nRadio turns on and switches to my favorite station.\n\nNow imagine if someone taller than me, with a different cell phone, and different taste in music turns on my car. They are going to have a bad experience because my car is customized to me.\nR is like my car. When “turning on” a new R session, there are a series of user-specific setup tasks that are completed before you can “start driving”. This is a very powerful feature of R which allows you to customize R to your specific needs. However, customizing the R startup process is user-specific and adds an extra layer of complexity to your R environment which may result in non-portable and non-reproducible code.\n\n\n\n\n\n\nWarning\n\n\n\nIt is recommend that users do not modify the R startup process.\n\n\nThere are a handful of files that can be used to modify the R startup process. It is still important to know what these files are and how they are executed upon R startup to modify your R environment.\n\nhttps://cran.r-project.org/web/packages/startup/vignettes/startup-intro.html\nhttps://cran.r-project.org/doc/manuals/r-release/R-intro.html#Scripting-with-R (Appendix B Invoking R)\nhttps://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/"
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#renviron",
+    "href": "chapters/sec1/r-startup.html#renviron",
+    "title": "1  R Startup",
+    "section": "1.1 .Renviron",
+    "text": "1.1 .Renviron\n\n1.1.1 What is the .Renviron file?\nThe .Renviron file is used for setting environment variables in your R session that are often sensitive in nature (e.g., GitHub Token, API keys). The .Renviron file does not contain R code. Each line of the .Renviron file should be in the form name=value:\nname1=value1\nname2=value2\nname3=value3\nCalling the Sys.getenv(\"name1\") function in your R session will return \"value1\"."
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#what-is-the-.rprofile-file",
+    "href": "chapters/sec1/r-startup.html#what-is-the-.rprofile-file",
+    "title": "1  R Startup",
+    "section": "1.2 What is the .Rprofile file?",
+    "text": "1.2 What is the .Rprofile file?\nThe .Rprofile file…"
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#where-to-put-the-.renviron-and-.rprofile",
+    "href": "chapters/sec1/r-startup.html#where-to-put-the-.renviron-and-.rprofile",
+    "title": "1  R Startup",
+    "section": "1.3 Where to put the .Renviron and .Rprofile",
+    "text": "1.3 Where to put the .Renviron and .Rprofile\nIt is common to have multiple .Renviron and .Rprofile files on your system. You may have a single one of each in your home directory (Sys.getenv(\"R_HOME\")), and additional ones within various project directories. Upon startup, R will check the following paths for these files in order\n\nIf set, the path encoded by the R_ENVIRON_USER or R_PROFILE_USER variables\n\nSys.getenv(\"R_ENVIRON_USER\")\nSys.getenv(\"R_PROFILE_USER\")\n\nYour current working directory: getwd()\nYour home directory: Sys.getenv(\"R_HOME\")"
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#where-to-put-.renviron-and-.rprofile",
+    "href": "chapters/sec1/r-startup.html#where-to-put-.renviron-and-.rprofile",
+    "title": "1  R Startup",
+    "section": "1.3 Where to put .Renviron and .Rprofile",
+    "text": "1.3 Where to put .Renviron and .Rprofile\nIt is common to have multiple .Renviron and .Rprofile files on your system. You may have a single one of each in your home directory (Sys.getenv(\"R_HOME\")), and additional ones within various project directories. Upon startup, R will check the following paths for these files in order:\n\nIf set, the path encoded by the R_ENVIRON_USER or R_PROFILE_USER variables\n\nSys.getenv(\"R_ENVIRON_USER\")\nSys.getenv(\"R_PROFILE_USER\")\n\nYour current working directory: getwd()\nYour home directory: Sys.getenv(\"R_HOME\")\n\n\n\n\n\n\n\nImportant\n\n\n\nR first searches and executes .Renviron (if present) before sourcing .Rprofile."
   }
 ]

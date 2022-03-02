@@ -1,5 +1,13 @@
 ## Your R Environment
 
-::: {.callout-note style="color: gray" appearance="minimal" icon="false"}
-A story about R environment differences.
+::: {.callout-note style="color: gray" icon="false"}
+A story about how environment can change the outcome (ice cream idea?)
 :::
+
+-   In order to reproduce a workflow, a user must understand the environment in which the workflow resides.
+
+-   Running R locally or on a shared server (e.g. RStudio Workbench)
+
+-   Step through the R startup:
+
+-   .Renviron/.Rprofile/.RData / .Rhistory

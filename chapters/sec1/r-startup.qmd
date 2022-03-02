@@ -1,0 +1,49 @@
+# R Startup
+
+My first car in high school was a 2001 Toyota Corolla. I loved this car mostly for its simplicity; I would turn on the car, and start driving. Fast forward 20+ years, when I turn on my current car now, there are a series of actions completed before I start driving including:
+
+-   The steering wheel adjusts to my pre-configured height.
+-   My cell phone connects to to the car's bluetooth.
+-   Radio turns on and switches to my favorite station.
+
+Now imagine if someone taller than me, with a different cell phone, and different taste in music turns on my car. They are going to have a bad experience because my car is customized to me.
+
+R is like my car. When "turning on" a new R session, there are a series of user-specific setup tasks that are completed before you can "start driving". This is a very powerful feature of R which allows you to customize R to your specific needs. However, customizing the R startup process is *user-specific* and adds an extra layer of complexity to your R environment which may result in non-portable and non-reproducible code.
+
+::: callout-warning
+It is recommend that users do not modify the R startup process.
+:::
+
+For reproducible workflows, it is still important to know what files can alter the R startup process. For this chapter, we will focus on the `.Renviron` and `.Rprofile` files.
+
+## `.Renviron`
+
+### What is the `.Renviron` file?
+
+The `.Renviron` file is used for setting environment variables in your R session that are often sensitive in nature (e.g., GitHub Token, API keys). The `.Renviron` file does **not** contain R code. Each line of the `.Renviron` file should be in the form *name=value*:
+
+``` R
+name1=value1
+name2=value2
+name3=value3
+```
+
+Calling the `Sys.getenv("name1")` function in your R session will return `"value1"`.
+
+## What is the `.Rprofile` file?
+
+The `.Rprofile` file...
+
+## Where to put `.Renviron` and `.Rprofile`
+
+It is common to have multiple `.Renviron` and `.Rprofile` files on your system. You may have a single one of each in your home directory (`Sys.getenv("R_HOME")`), and additional ones within various project directories. Upon startup, R will check the following paths for these files in order:
+
+1.  If set, the path encoded by the `R_ENVIRON_USER` or `R_PROFILE_USER` variables
+    i.  `Sys.getenv("R_ENVIRON_USER")`
+    ii. `Sys.getenv("R_PROFILE_USER")`
+2.  Your current working directory: `getwd()`
+3.  Your home directory: `Sys.getenv("R_HOME")`
+
+::: callout-important
+R first searches and executes `.Renviron` (if present) before sourcing `.Rprofile`.
+:::

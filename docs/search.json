@@ -52,8 +52,8 @@
     "objectID": "chapters/sec1/r-startup.html#renviron",
     "href": "chapters/sec1/r-startup.html#renviron",
     "title": "1  R Startup",
-    "section": "1.1 .Renviron",
-    "text": "1.1 .Renviron\n\n1.1.1 What is the .Renviron file?\nThe .Renviron file is used for setting environment variables in your R session that are often sensitive in nature (e.g., GitHub Token, API keys). The .Renviron file does not contain R code. Each line of the .Renviron file should be in the form name=value:\nname1=value1\nname2=value2\nname3=value3\nCalling the Sys.getenv(\"name1\") function in your R session will return \"value1\"."
+    "section": "1.2 .Renviron",
+    "text": "1.2 .Renviron\n\n1.2.1 What is the .Renviron file?\nThe .Renviron file is used for setting environment variables in your R session (e.g., GitHub Token, API keys). Each line of the .Renviron file should be in the form name=value:\nname1=value1\nname2=value2\nname3=value3\nCalling the Sys.getenv(\"name1\") function in your R session will return \"value1\"."
   },
   {
     "objectID": "chapters/sec1/r-startup.html#what-is-the-.rprofile-file",
@@ -73,7 +73,35 @@
     "objectID": "chapters/sec1/r-startup.html#where-to-put-.renviron-and-.rprofile",
     "href": "chapters/sec1/r-startup.html#where-to-put-.renviron-and-.rprofile",
     "title": "1  R Startup",
-    "section": "1.3 Where to put .Renviron and .Rprofile",
-    "text": "1.3 Where to put .Renviron and .Rprofile\nIt is common to have multiple .Renviron and .Rprofile files on your system. You may have a single one of each in your home directory (Sys.getenv(\"R_HOME\")), and additional ones within various project directories. Upon startup, R will check the following paths for these files in order:\n\nIf set, the path encoded by the R_ENVIRON_USER or R_PROFILE_USER variables\n\nSys.getenv(\"R_ENVIRON_USER\")\nSys.getenv(\"R_PROFILE_USER\")\n\nYour current working directory: getwd()\nYour home directory: Sys.getenv(\"R_HOME\")\n\n\n\n\n\n\n\nImportant\n\n\n\nR first searches and executes .Renviron (if present) before sourcing .Rprofile."
+    "section": "1.4 Where to put .Renviron and .Rprofile",
+    "text": "1.4 Where to put .Renviron and .Rprofile\nIt is common to have multiple .Renviron and .Rprofile files on your system. You may have a single one of each in your home directory (Sys.getenv(\"R_HOME\")), and additional ones within various project directories. Upon startup, R will check the following paths for these files in order:\n\nIf set, the path encoded by the R_ENVIRON_USER or R_PROFILE_USER variables\n\nSys.getenv(\"R_ENVIRON_USER\")\nSys.getenv(\"R_PROFILE_USER\")\n\nYour current working directory: getwd()\nYour home directory: Sys.getenv(\"R_HOME\")\n\n\n\n\n\n\n\nImportant\n\n\n\nR first searches and executes .Renviron (if present) before sourcing .Rprofile."
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#other-startup-files",
+    "href": "chapters/sec1/r-startup.html#other-startup-files",
+    "title": "1  R Startup",
+    "section": "1.5 Other startup files",
+    "text": "1.5 Other startup files\nIf you leverage R from within a shared server environment (e.g. RStudio Workbench), your system administrator may have additional startup files that are processed for all R sessions on the server. These are known as site wide files and are conveniently named .Renviron.site and .Rprofile.site.\nYou may also find a separate Renviron file within the R_HOME/etc/ directory. This file contains environment variables set by R in the configure process and should never be manually modified."
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#recap",
+    "href": "chapters/sec1/r-startup.html#recap",
+    "title": "1  R Startup",
+    "section": "1.6 Recap",
+    "text": "1.6 Recap"
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#rprofile",
+    "href": "chapters/sec1/r-startup.html#rprofile",
+    "title": "1  R Startup",
+    "section": "1.3 .Rprofile",
+    "text": "1.3 .Rprofile\n\n1.3.1 What is the .Rprofile file?\nThe .Rprofile file…"
+  },
+  {
+    "objectID": "chapters/sec1/r-startup.html#startup-overview",
+    "href": "chapters/sec1/r-startup.html#startup-overview",
+    "title": "1  R Startup",
+    "section": "1.1 Startup Overview",
+    "text": "1.1 Startup Overview\nThe R startup process can be summarized in three steps:\n\nStart R\nSet Environment Variables\nSource Profile Scripts\n\n\n\n\n\n\nThe following definitions will help fully understand the above figure:\n\nR_HOME: this environment variable encodes the path to R on your filesystem. It can be accessed by running R.home(component = \"home\").\nWorking directory: current directory where R will will look for and save files. It can be accessed by running getwd() and often referenced as . in R.\nHome directory: This is the default working directory when R starts up and is often referenced as ~ in R."
   }
 ]

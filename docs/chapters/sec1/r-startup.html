@@ -196,12 +196,17 @@
         <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#renviron" class="nav-link active" data-scroll-target="#renviron"> <span class="header-section-number">1.1</span> <code>.Renviron</code></a>
+<li><a href="#startup-overview" class="nav-link active" data-scroll-target="#startup-overview"> <span class="header-section-number">1.1</span> Startup Overview</a></li>
+<li><a href="#renviron" class="nav-link" data-scroll-target="#renviron"> <span class="header-section-number">1.2</span> <code>.Renviron</code></a>
 <ul class="collapse">
-<li><a href="#what-is-the-.renviron-file" class="nav-link" data-scroll-target="#what-is-the-.renviron-file"> <span class="header-section-number">1.1.1</span> What is the <code>.Renviron</code> file?</a></li>
+<li><a href="#what-is-the-.renviron-file" class="nav-link" data-scroll-target="#what-is-the-.renviron-file"> <span class="header-section-number">1.2.1</span> What is the <code>.Renviron</code> file?</a></li>
 </ul></li>
-<li><a href="#what-is-the-.rprofile-file" class="nav-link" data-scroll-target="#what-is-the-.rprofile-file"> <span class="header-section-number">1.2</span> What is the <code>.Rprofile</code> file?</a></li>
-<li><a href="#where-to-put-.renviron-and-.rprofile" class="nav-link" data-scroll-target="#where-to-put-.renviron-and-.rprofile"> <span class="header-section-number">1.3</span> Where to put <code>.Renviron</code> and <code>.Rprofile</code></a></li>
+<li><a href="#rprofile" class="nav-link" data-scroll-target="#rprofile"> <span class="header-section-number">1.3</span> <code>.Rprofile</code></a>
+<ul class="collapse">
+<li><a href="#what-is-the-.rprofile-file" class="nav-link" data-scroll-target="#what-is-the-.rprofile-file"> <span class="header-section-number">1.3.1</span> What is the <code>.Rprofile</code> file?</a></li>
+</ul></li>
+<li><a href="#where-to-put-.renviron-and-.rprofile" class="nav-link" data-scroll-target="#where-to-put-.renviron-and-.rprofile"> <span class="header-section-number">1.4</span> Where to put <code>.Renviron</code> and <code>.Rprofile</code></a></li>
+<li><a href="#other-startup-files" class="nav-link" data-scroll-target="#other-startup-files"> <span class="header-section-number">1.5</span> Other startup files</a></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ryjohnson09/reproduceR/edit/main/chapters/sec1/r-startup.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -229,27 +234,50 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It is recommend that users do not modify the R startup process.</p>
+<p>To ensure reproducibility, it is recommend that users do not modify the R startup process.</p>
 </div>
 </div>
-<p>For reproducible workflows, it is still important to know what files can alter the R startup process. For this chapter, we will focus on the <code>.Renviron</code> and <code>.Rprofile</code> files.</p>
-<section id="renviron" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="renviron"><span class="header-section-number">1.1</span> <code>.Renviron</code></h2>
-<section id="what-is-the-.renviron-file" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="what-is-the-.renviron-file"><span class="header-section-number">1.1.1</span> What is the <code>.Renviron</code> file?</h3>
-<p>The <code>.Renviron</code> file is used for setting environment variables in your R session that are often sensitive in nature (e.g., GitHub Token, API keys). The <code>.Renviron</code> file does <strong>not</strong> contain R code. Each line of the <code>.Renviron</code> file should be in the form <em>name=value</em>:</p>
+<p>For reproducible workflows, it is still important to know what files can alter the R startup process which may help troubleshoot unexpected behavior. For this chapter, we will focus on the <code>.Renviron</code> and <code>.Rprofile</code> files.</p>
+<section id="startup-overview" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="startup-overview"><span class="header-section-number">1.1</span> Startup Overview</h2>
+<p>The R startup process can be summarized in three steps:</p>
+<ol type="1">
+<li>Start R</li>
+<li>Set Environment Variables</li>
+<li>Source Profile Scripts</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/r_startup.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The following definitions will help fully understand the above figure:</p>
+<ul>
+<li><strong>R_HOME</strong>: this environment variable encodes the path to R on your filesystem. It can be accessed by running <code>R.home(component = "home")</code>.</li>
+<li><strong>Working directory:</strong> current directory where R will will look for and save files. It can be accessed by running <code>getwd()</code> and often referenced as <code>.</code> in R.</li>
+<li><strong>Home directory:</strong> This is the default working directory when R starts up and is often referenced as <code>~</code> in R.</li>
+</ul>
+</section>
+<section id="renviron" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="renviron"><span class="header-section-number">1.2</span> <code>.Renviron</code></h2>
+<section id="what-is-the-.renviron-file" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="what-is-the-.renviron-file"><span class="header-section-number">1.2.1</span> What is the <code>.Renviron</code> file?</h3>
+<p>The <code>.Renviron</code> file is used for setting environment variables in your R session (e.g., GitHub Token, API keys). Each line of the <code>.Renviron</code> file should be in the form <em>name=value</em>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name1<span class="ot">=</span>value1</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name2<span class="ot">=</span>value2</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>name3<span class="ot">=</span>value3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Calling the <code>Sys.getenv("name1")</code> function in your R session will return <code>"value1"</code>.</p>
 </section>
 </section>
-<section id="what-is-the-.rprofile-file" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-the-.rprofile-file"><span class="header-section-number">1.2</span> What is the <code>.Rprofile</code> file?</h2>
+<section id="rprofile" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="rprofile"><span class="header-section-number">1.3</span> <code>.Rprofile</code></h2>
+<section id="what-is-the-.rprofile-file" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="what-is-the-.rprofile-file"><span class="header-section-number">1.3.1</span> What is the <code>.Rprofile</code> file?</h3>
 <p>The <code>.Rprofile</code> file…</p>
 </section>
-<section id="where-to-put-.renviron-and-.rprofile" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="where-to-put-.renviron-and-.rprofile"><span class="header-section-number">1.3</span> Where to put <code>.Renviron</code> and <code>.Rprofile</code></h2>
+</section>
+<section id="where-to-put-.renviron-and-.rprofile" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="where-to-put-.renviron-and-.rprofile"><span class="header-section-number">1.4</span> Where to put <code>.Renviron</code> and <code>.Rprofile</code></h2>
 <p>It is common to have multiple <code>.Renviron</code> and <code>.Rprofile</code> files on your system. You may have a single one of each in your home directory (<code>Sys.getenv("R_HOME")</code>), and additional ones within various project directories. Upon startup, R will check the following paths for these files in order:</p>
 <ol type="1">
 <li>If set, the path encoded by the <code>R_ENVIRON_USER</code> or <code>R_PROFILE_USER</code> variables
@@ -273,6 +301,11 @@ Important
 <p>R first searches and executes <code>.Renviron</code> (if present) before sourcing <code>.Rprofile</code>.</p>
 </div>
 </div>
+</section>
+<section id="other-startup-files" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="other-startup-files"><span class="header-section-number">1.5</span> Other startup files</h2>
+<p>If you leverage R from within a shared server environment (e.g.&nbsp;RStudio Workbench), your system administrator may have additional startup files that are processed for all R sessions on the server. These are known as <strong>site wide</strong> files and are conveniently named <code>.Renviron.site</code> and <code>.Rprofile.site</code>.</p>
+<p>You may also find a separate <code>Renviron</code> file within the <code>R_HOME/etc/</code> directory. This file contains environment variables set by R in the configure process and should never be manually modified.</p>
 
 
 </section>

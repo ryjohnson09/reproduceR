@@ -11,18 +11,34 @@ Now imagine if someone taller than me, with a different cell phone, and differen
 R is like my car. When "turning on" a new R session, there are a series of user-specific setup tasks that are completed before you can "start driving". This is a very powerful feature of R which allows you to customize R to your specific needs. However, customizing the R startup process is *user-specific* and adds an extra layer of complexity to your R environment which may result in non-portable and non-reproducible code.
 
 ::: callout-warning
-It is recommend that users do not modify the R startup process.
+To ensure reproducibility, it is recommend that users do not modify the R startup process.
 :::
 
-For reproducible workflows, it is still important to know what files can alter the R startup process. For this chapter, we will focus on the `.Renviron` and `.Rprofile` files.
+For reproducible workflows, it is still important to know what files can alter the R startup process which may help troubleshoot unexpected behavior. For this chapter, we will focus on the `.Renviron` and `.Rprofile` files.
+
+## Startup Overview
+
+The R startup process can be summarized in three steps:
+
+1.  Start R
+2.  Set Environment Variables
+3.  Source Profile Scripts
+
+![](/images/r_startup.jpg){fig-align="center"}
+
+The following definitions will help fully understand the above figure:
+
+-   **R_HOME**: this environment variable encodes the path to R on your filesystem. It can be accessed by running `R.home(component = "home")`.
+-   **Working directory:** current directory where R will will look for and save files. It can be accessed by running `getwd()` and often referenced as `.` in R.
+-   **Home directory:** This is the default working directory when R starts up and is often referenced as `~` in R.
 
 ## `.Renviron`
 
 ### What is the `.Renviron` file?
 
-The `.Renviron` file is used for setting environment variables in your R session that are often sensitive in nature (e.g., GitHub Token, API keys). The `.Renviron` file does **not** contain R code. Each line of the `.Renviron` file should be in the form *name=value*:
+The `.Renviron` file is used for setting environment variables in your R session (e.g., GitHub Token, API keys). Each line of the `.Renviron` file should be in the form *name=value*:
 
-``` R
+``` r
 name1=value1
 name2=value2
 name3=value3
@@ -30,7 +46,9 @@ name3=value3
 
 Calling the `Sys.getenv("name1")` function in your R session will return `"value1"`.
 
-## What is the `.Rprofile` file?
+## `.Rprofile`
+
+### What is the `.Rprofile` file?
 
 The `.Rprofile` file...
 
@@ -47,3 +65,9 @@ It is common to have multiple `.Renviron` and `.Rprofile` files on your system. 
 ::: callout-important
 R first searches and executes `.Renviron` (if present) before sourcing `.Rprofile`.
 :::
+
+## Other startup files
+
+If you leverage R from within a shared server environment (e.g. RStudio Workbench), your system administrator may have additional startup files that are processed for all R sessions on the server. These are known as **site wide** files and are conveniently named `.Renviron.site` and `.Rprofile.site`.
+
+You may also find a separate `Renviron` file within the `R_HOME/etc/` directory. This file contains environment variables set by R in the configure process and should never be manually modified.
